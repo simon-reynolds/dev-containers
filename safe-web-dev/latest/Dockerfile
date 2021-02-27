@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1
+FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim
 
  # Add keys and sources lists
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
