@@ -1,5 +1,8 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1
 
+# Set the default shell to bash rather than sh
+ENV SHELL /bin/bash
+
  # Add keys and sources lists
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
@@ -22,7 +25,3 @@ RUN dotnet tool install paket -g
 
  # add dotnet tools to path to pick up fake and paket installation
 ENV PATH="/root/.dotnet/tools:${PATH}"
-
-# Set the default shell to bash rather than sh
-ENV SHELL /bin/bash
-
